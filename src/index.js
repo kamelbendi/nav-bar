@@ -4,6 +4,7 @@ import './index.css';
 //import App from './App';
 import Counter from "./components/counter.jsx"
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(<Counter/>, document.getElementById("root"));
 
