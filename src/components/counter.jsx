@@ -15,7 +15,11 @@ class Counter extends Component {
         fontWeight :'bold'
     };
 
-
+    renderTags(){
+        if (this.state.tags===0) return <p>there are no tags!</p>
+        else
+        return <span>{this.state.tags.map(tag=><li key={tag}>{tag}</li>)}</span>;
+    }
         
     
 
@@ -25,13 +29,12 @@ class Counter extends Component {
 
         return (
         <div>
-            <span style={this.styles} className={ this.getBadgeClasses()}>{this.state.count}</span>
-            <button className="btn btn-secondary btn-sm">Increment</button>
-            <span>{this.state.tags.map(tag=><li>{tag}</li>)}</span>
+            {this.renderTags()}
+            
         </div>);
     }
 
-    getBadgeClasses() {
+    /* getBadgeClasses() {
         let classes = "badge m-2 badge-";
         classes += this.state.count === 0 ? "warning" : "primary";
         return classes;
@@ -40,7 +43,8 @@ class Counter extends Component {
     formatCount(){
         const {count}=this.state;
         return count===0 ? "Zero" : count;
-    }
+    } */
+
 
 }
  
