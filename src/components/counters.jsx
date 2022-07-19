@@ -22,6 +22,7 @@ handleDelete = (counterId) =>{
         <div>
             {this.state.counters.map( counter => 
                 (<Counter onDelete={this.handleDelete} key={counter.id} value={counter.value}/>))}
+        
         </div>);
 
     }
